@@ -1,0 +1,1 @@
+command: python $program/scoring.py --output_dir_scoring=$output
