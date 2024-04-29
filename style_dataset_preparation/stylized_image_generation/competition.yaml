@@ -1,0 +1,62 @@
+version: '2'
+title: "Stylized Meta Album Generation"
+docker_image: dustrix397/cdmetadl:gpu-new
+description: "Stylized Meta Album Generation"
+submission_rule: "Force_Last"
+has_registration: False                 # We do not check participants, registration is free
+force_submission_to_leaderboard: True   # If false, participants must submit manually, do not change
+disallow_leaderboard_modifying: True    # If true, submissions cannot be changed
+enable_detailed_results: True           # True if html file written
+enable_forum: True                      # Forum active
+admin_names: pavao,guyon                # Admin people that can help you will have access to your competition
+end_date: null                          # Never ends
+image: images/logo.png
+terms: terms.md
+pages:
+- title: Overview
+  file: overview.md
+tasks:
+  - index: 0
+    name: Generate Stylized Data
+    description: Generate Stylized Data
+    scoring_program: scoring_program
+    ingestion_program: ingestion_program
+    input_data: input_data
+    reference_data: reference_data
+phases:
+- index: 0
+  name: Main Phase
+  description: "Test"
+  start: '2023-05-05'
+  end: '2025-08-21'
+  max_submissions_per_day: 3000
+  max_submissions: 1000000
+  execution_time_limit: 100000
+  auto_migrate_to_this_phase: false
+  hide_output: false
+  tasks:
+  - 0
+  solutions: []
+- index: 1
+  name: Final Phase
+  description: "Test"
+  start: '2025-08-22'
+  end: '2027-08-21'
+  max_submissions_per_day: 3000
+  max_submissions: 1000000
+  execution_time_limit: 100000
+  auto_migrate_to_this_phase: false
+  hide_output: false
+  tasks:
+  - 0
+  solutions: []
+leaderboards:
+- index: 0
+  title: Results
+  key: main
+  hidden: false
+  columns:
+  - title: score
+    key: score
+    index: 0
+    sorting: desc
