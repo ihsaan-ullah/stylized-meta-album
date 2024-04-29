@@ -1,0 +1,2 @@
+category='cow'
+domain = 'datasets'
