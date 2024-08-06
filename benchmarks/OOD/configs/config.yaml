@@ -1,0 +1,46 @@
+wandb_project: SMA_all_2
+output_dir: 'outputs'
+slurm_output_dir: 'slurm_outputs'
+data_path: 'data'
+slurm_partition: null #Pas None ?
+max_time: 4320  # 3 * 24 * 60
+num_hparams_seeds: 20
+#num_init_seeds: 5
+selector: 'mean_grp_acc_va' # min_acc_va
+
+
+method:  #  'jtt', 'suby' 'subg', 'rwy', 'rwg', 'dro'
+dataset: 'SMA'
+init_seed: 0
+hparams_seed: 0
+eval_every_n_epochs: 4
+arch: "resnet50"
+
+
+n_HBO_runs: 15
+n_eval_init_seed: 5
+
+num_epochs: 20
+batch_size: 16
+eta: 0.1
+lr: 1e-3
+weight_decay: 1e-3
+up: 20 #[4, 5, 6, 20, 50, 100]
+T: 3
+scheduler: False
+
+
+# Specific hyperparameters for to create SMA dataset
+SMA:
+  mode: 'classic'
+  img_size: 256
+  split_seeds: [0]
+  names:  ['dogs'] #plt-net ins2 medical-leaf texture-dtd
+  Ks: [2,4,8]
+  mus: [0.1]
+  methods: ['erm','jtt', 'suby', 'subg', 'rwy', 'rwg', 'dro']
+
+
+
+
+
